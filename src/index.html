@@ -12,59 +12,41 @@
 <body>
 
     <section id="main">
-        <div class="container">
+        <div class="container"  >
             <div class="row">
                 <div class="col-12 py-5">
-                   <div class="d-flex align-items-center justify-content-between" >
+                    <div class="d-flex align-items-center justify-content-between">
                         <h3>Todos</h3>
-                        <div class="d-flex  align-items-center gap-3" >
-                                <input type="text" class="form-control" placeholder="Enter Task" aria-label="Username" aria-describedby="basic-addon1">
-                            <button type="button" class="btn btn-primary">Add</button>
+                        <div class="d-flex  align-items-center gap-3">
+                            <input type="text" class="form-control" placeholder="Enter Task" aria-label="Username"
+                                aria-describedby="basic-addon1" id="todo-input" >
+                            <button type="button" class="btn btn-primary" onclick="addFunction()">Add</button>
                         </div>
-                   </div>
+                        <div class="d-flex  align-items-center gap-3">
+                            <input type="text" class="form-control" placeholder="Search a todo" aria-label="Username"
+                                aria-describedby="basic-addon1" id="search-input">
+                        </div>
+                    </div>
                 </div>
-                <div class="col" >
-                    <h6 class="text-secondary" >S.No</h4>
+                <div class="col">
+                    <h6 class="text-secondary">S.No</h4>
                 </div>
-                <div class="col-8" >
-                    <h6 class="text-secondary" >Todo</h4>
+                <div class="col-8">
+                    <h6 class="text-secondary">Todo</h4>
                 </div>
-                <div class="col" >
-                    <h6 class="text-secondary" >Action</h4>
+                <div class="col">
+                    <h6 class="text-secondary">Action</h4>
                 </div>
-                
-                <hr/>
+
+                <hr />
             </div>
 
-            <div class="row align-items-center">
-                <div class="col" >
-                    <h6 class="mb-0" >1</h4>
-                </div>
-                <div class="col-8" >
-                    <h6 class="mb-0" >I Want to learn javascript</h4>
-                </div>
-                <div class="col" >
-                    <button type="button" class="btn btn-warning">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-            <hr/>
-            <div class="row align-items-center">
-                <div class="col" >
-                    <h6 class="mb-0" >2</h4>
-                </div>
-                <div class="col-8" >
-                    <h6 class="mb-0" >I Want to learn Python</h4>
-                </div>
-                <div class="col" >
-                    <button type="button" class="btn btn-warning">Edit</button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                </div>
-            </div>
-            <hr/>
+            <div class="container" id="main-container" >
 
+            </div>
         </div>
     </section>
+
 
     <script src="./script.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
