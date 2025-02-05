@@ -8,9 +8,6 @@ console.log(count)
 // getting the input value and calling the add function
 function addFunction(){
   let input = document.getElementById("todo-input")
-  if(input.value == ""){
-    return;
-  }
   addTodo(count,input.value)
   let value = {
     serialNo:count,
@@ -81,11 +78,25 @@ function addTodo(sno, value) {
 
   delete_button.addEventListener('click',deleteTodo)
 
-  edit_button.addEventListener('click',editTodo)
-
   // delete_button.onclick = deleteTodo;
 
 }
+
+
+
+// function getTodoValue() {
+//   let todoInput = document.getElementById("todo-input")
+//   let task = {
+//     serialNo: count,
+//     taskValue: todoInput.value
+//   }
+//   tasks.push(task)
+//   localStorage.setItem("tasks", JSON.stringify(tasks))
+//   count++
+// }
+
+
+//
 
 
 // to load/print the todos when the page loads/refresh
@@ -129,34 +140,6 @@ function searchTodo(e) {
 }
 
 
-function editTodo(e){
-
-  // get the new value
- let newValue =  prompt("enter new todo")
- let mainContainer = document.getElementById("main-container")
-
- //target the previous value
- let secondChild = e.target.parentElement.parentElement.getElementsByTagName('div')[1].firstElementChild
-
- //update the previous value with new value
- secondChild.innerText = newValue
-
- let firstChild = e.target.parentElement.parentElement.getElementsByTagName('div')[0].firstElementChild
-
-  let filterdArray = tasks.map((value,key)=>{
-    if(value.serialNo==firstChild.innerText){
-      value.taskValue = newValue;
-    }
-    return value;
-  });
-
-  tasks = filterdArray;
-
-  localStorage.setItem("tasks",JSON.stringify(filterdArray));
-
-
-}
-
 
 
 
@@ -185,8 +168,6 @@ function deleteTodo(e){
   console.log(finalTodos)
 
 
-  tasks = finalTodos;
-  count--
 
   localStorage.setItem("tasks",JSON.stringify(finalTodos))  // localstorage 
   removeRow.remove() // dom 
